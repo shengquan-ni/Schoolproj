@@ -1,0 +1,55 @@
+# Setup
+c-->from imp import reload
+c-->import q4solution
+c-->reload(q4solution)
+c-->from goody import irange
+c-->from predicate import is_prime
+c-->from q4solution import hide, sequence, group_when, drop_last, yield_and_skip, alternate, min_key_order
+
+# Test sequence
+e-->''.join([v for v in sequence('abc', 'd', 'ef', 'ghi')])-->abcdefghi
+e-->''.join([v for v in sequence(hide('abc'), hide('d'), hide('ef'), hide('ghi'))])-->abcdefghi
+e-->''.join([v for v in sequence(hide('ab'), hide('cdefgh'), hide('i'), hide('jklm'))])-->abcdefghijklm
+
+# Test group_when
+==-->[v for v in group_when('combustibles', lambda x : x in 'aeiou')]-->[['c', 'o'], ['m', 'b', 'u'], ['s', 't', 'i'], ['b', 'l', 'e'], ['s']]
+==-->[v for v in group_when(hide('combustibles'), lambda x : x in 'aeiou')]-->[['c', 'o'], ['m', 'b', 'u'], ['s', 't', 'i'], ['b', 'l', 'e'], ['s']]
+==-->[v for v in group_when(hide('combustibles'), lambda x : x in 'us')]-->[['c', 'o', 'm', 'b', 'u'], ['s'], ['t', 'i', 'b', 'l', 'e', 's']]
+
+# Test drop_last
+e-->''.join([v for v in drop_last('combustible', 5)])-->combus
+e-->''.join([v for v in drop_last(hide('combustible'), 5)])-->combus
+e-->''.join([v for v in drop_last(hide('combustible'), 3)])-->combusti
+e-->''.join([v for v in drop_last(hide('combustible'), 10)])-->
+
+# Test yield_and_skip
+e-->''.join([v for v in yield_and_skip('abbabxcabbcaccabb',lambda x : {'a':1,'b':2,'c':3}.get(x,0))])-->abxccab
+e-->''.join([v for v in yield_and_skip(hide('abbabxcabbcaccabb'),lambda x : {'a':1,'b':2,'c':3}.get(x,0))])-->abxccab
+e-->''.join([v for v in yield_and_skip(hide('abxcbbacbbbaxbbaab'),lambda x : {'a':1,'b':2,'c':3}.get(x,0))])-->axccaba
+
+# Test alternate
+e-->''.join([v for v in alternate('abcde','fg','hijk')])-->afhbgicjdke
+e-->''.join([v for v in alternate(hide('abcde'),hide('fg'),hide('hijk'))])-->afhbgicjdke
+e-->''.join([v for v in alternate(hide('fg'),hide('hijk'),hide('abcde'))])-->fhagibjckde
+e-->''.join([v for v in alternate(hide('abcd'), hide('efghi'),hide('jklm'))])-->aejbfkcgldhmi
+
+# Test min_key_order
+c-->d = {1:'a', 2:'x', 4:'m', 8:'d', 16:'f'}
+c-->i = min_key_order(d)
+==-->[next(i), next(i), d.pop(8), next(i), d.setdefault(32,'z'), next(i), next(i)]-->[(1, 'a'), (2, 'x'), 'd', (4, 'm'), 'z', (16, 'f'), (32, 'z')]
+==-->d-->{1:'a', 2:'x', 4:'m', 16:'f', 32:'z'}
+c-->d = {1:'a', 2:'x', 4:'m', 8:'d', 16:'f'}
+c-->i = min_key_order(d)
+==-->[next(i), next(i), next(i), d.setdefault(3,'n'), d.setdefault(10,'o'), d.setdefault(32,'z'), next(i), next(i), next(i), next(i)]-->[(1, 'a'), (2, 'x'), (4, 'm'), 'n', 'o', 'z', (8, 'd'), (10, 'o'), (16, 'f'), (32, 'z')]
+==-->d-->{1:'a', 2:'x', 3:'n', 4:'m', 8:'d', 10:'o', 16:'f', 32:'z'}
+c-->d = {1:'a', 2:'x', 4:'m', 8:'d', 16:'f'}
+c-->i = min_key_order(d)
+==-->[next(i), d.pop(2), d.pop(4), d.pop(8), next(i)]-->[(1, 'a'), 'x', 'm', 'd', (16, 'f')]
+==-->d-->{1:'a', 16:'f'}
+c-->d = {1:'a', 2:'x', 4:'m', 8:'d', 16:'f'}
+c-->i = min_key_order(d)
+==-->[next(i), d.pop(2), next(i), d.pop(4), d.pop(8), next(i)]-->[(1, 'a'), 'x', (4, 'm'), 'm', 'd', (16, 'f')]
+==-->d-->{1:'a', 16:'f'}
+c-->d = {}
+c-->i = min_key_order(d)
+^-->next(i)-->StopIteration

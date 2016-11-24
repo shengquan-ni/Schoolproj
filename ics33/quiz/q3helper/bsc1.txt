@@ -1,0 +1,106 @@
+# Setup
+c-->from imp import reload
+c-->import ddate
+c-->reload(ddate)
+c-->from ddate import Date
+
+# Test __init__
+c-->d = Date(2016,4,15)
+e-->d.year-->2016
+e-->d.month-->4
+e-->d.day-->15
+^-->Date(-1,4,15)-->AssertionError
+^-->Date(2016,0,15)-->AssertionError
+^-->Date(2016,13,15)-->AssertionError
+^-->Date(2016,4,31)-->AssertionError
+^-->Date(2015,2,29)-->AssertionError
+^-->Date(2016.,4,15)-->AssertionError
+^-->Date(2016,4.,15)-->AssertionError
+^-->Date(2016,4,15.)-->AssertionError
+
+# Test __getitem__
+c-->d = Date(2016,4,15)
+e-->d['y']-->2016
+e-->d['m']-->4
+e-->d['d']-->15
+e-->d['m','d']-->(4, 15)
+e-->d['m','d','y']-->(4, 15, 2016)
+e-->d['m','m','y']-->(4, 4, 2016)
+^-->d['month']-->IndexError
+^-->d[0]-->IndexError
+^-->d[['m','m','y']]-->IndexError
+
+# Test __repr__ and __str__
+c-->d = Date(2016,4,15)
+e-->repr(d)-->Date(2016,4,15)
+e-->str(d)-->4/15/2016
+
+# Test __len__
+e-->len(Date(0,1,1))-->0
+e-->len(Date(0,12,31))-->365
+e-->len(Date(0,3,14))-->73
+e-->len(Date(1,1,1))-->366
+e-->len(Date(1900,1,1))-->693961
+e-->len(Date(1912,4,15))-->698448
+e-->len(Date(1969,7,20))-->719363
+e-->len(Date(2000,1,1))-->730485
+e-->len(Date(2016,4,15))-->736434
+
+# Test == and !=
+c-->d1 = Date(2016,4,15)
+c-->d2 = Date(2016,4,16)
+c-->d3 = Date(2016,5,15)
+c-->d4 = Date(2017,4,15)
+e-->d1 == d1-->True
+e-->d2 == d2-->True
+e-->d3 == d3-->True
+e-->d4 == d4-->True
+e-->d1 == d2-->False
+e-->d1 == d3-->False
+e-->d1 == d4-->False
+e-->d1 != d1-->False
+e-->d1 == 1-->False
+e-->1 == d1-->False
+
+# Test <
+c-->ds = [Date(2016,4,15), Date(2016,4,16), Date(2016,4,17)]
+e-->[x<y for x in ds for y in ds]-->[False, True, True, False, False, True, False, False, False]
+e-->[x>y for x in ds for y in ds]-->[False, False, False, True, False, False, True, True, False]
+c-->d1 = Date(1912,4,15)
+c-->d2 = Date(1969,7,20)
+e-->d1 < d2 and d2 > d1-->True
+e-->d2 < d1 or  d1 > d2-->False
+e-->d1 < 698448-->False
+e-->d1 < 698449-->True
+^-->d1 < .5-->TypeError
+
+# Test __add__
+c-->d = Date(2016,4,15)
+e-->d + 1-->4/16/2016
+e-->d - 1-->4/14/2016
+e-->d + 100-->7/24/2016
+e-->d - 100-->1/6/2016
+e-->d + 1000-->1/10/2019
+e-->d - 1000-->7/20/2013
+e-->d + 1000 + 100 + 1-->4/21/2019
+e-->d - 1000 - 100 - 1-->4/10/2013
+^-->d + 'abc'-->TypeError
+^-->d + 1.  -->TypeError
+
+# Test __sub__
+c-->d = Date(2016,4,15)
+e-->Date(1969,7,20) - Date(1912,4,15)-->20915
+e-->Date(2016,7,24) - d-->100
+e-->Date(2016,1,6) - d-->-100
+e-->Date(2019,1,10) - d-->1000
+e-->Date(2013,7,20) - d-->-1000
+e-->Date(2019,4,21) - d-->1101
+e-->Date(2013,4,10) - d-->-1101
+
+# Test __call__
+c-->d = Date(2016,4,15)
+c-->d(2016,6,8)
+e-->d-->6/8/2016
+c-->d(1900,1,1)
+e-->d-->1/1/1900
+^-->d(2001,2,29)-->AssertionError

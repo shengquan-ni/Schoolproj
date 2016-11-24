@@ -1,0 +1,11 @@
+def f():
+def a_func(a):
+def f(a=10):
+def f(a=+10):
+def a_func_10_20_(a,bee=+523,c3=-10,dend_10):
+Above should match; below should not (and of course, not this line)
+def f()
+f():
+def gfun(x,,y):
+def gfun(x y):
+def h(x,y=x):

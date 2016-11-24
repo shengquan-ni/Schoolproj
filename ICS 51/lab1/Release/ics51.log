@@ -1,0 +1,12 @@
+﻿生成启动时间为 2016/4/4 13:31:44。
+     1>项目“D:\ICS 51\ics51.vcxproj”在节点 2 上(Build 个目标)。
+     1>Link:
+         D:\VS\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\ICS 51\Release\ics51.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /Debug /PDB:"D:\ICS 51\Release\ics51.pdb" /SUBSYSTEM:CONSOLE /OPT:REF /OPT:ICF /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\ICS 51\Release\ics51.lib" /MACHINE:X86 /SAFESEH "Release\lab1-testing.obj"
+         Release\lab1.obj
+     1>LINK : warning LNK4075: 忽略“/INCREMENTAL”(由于“/OPT:ICF”规范)
+         ics51.vcxproj -> D:\ICS 51\Release\ics51.exe
+     1>已完成生成项目“D:\ICS 51\ics51.vcxproj”(Build 个目标)的操作。
+
+已成功生成。
+
+已用时间 00:00:00.65

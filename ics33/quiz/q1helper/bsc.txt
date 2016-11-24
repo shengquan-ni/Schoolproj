@@ -1,0 +1,53 @@
+# Setup
+c-->from imp import reload
+c-->import q1solution
+c-->reload(q1solution)
+c-->from q1solution import abs_of, select, palindrome, talk, made_quota, sales1, sales2, by_category, category_leaders
+
+# Test abs_of/keep_when
+c-->f = abs_of (lambda x : 3*x+2)
+c-->g = abs_of (lambda x : -x)
+e-->[f(x) for x in [-10, -5, 0, 5, 10]]-->[28, 13, 2, 17, 32]
+e-->[g(x) for x in [-10, -5, 0, 5, 10]]-->[10, 5, 0, 5, 10]
+c-->big_odd = select ([(lambda x : x%2 == 1), (lambda x : x > 5)]) 
+c-->scp = select([(lambda x : len(x) <=5),(lambda x : x[0] not in 'aeiou'),palindrome])
+e-->big_odd(range(1,10))-->[7, 9]
+e-->scp(['rotator', 'redder', 'pepper', 'rotor', 'tiny', 'eye', 'mom', 'ere', 'radar', 'racecar', 'peep'])-->['rotor', 'mom', 'radar', 'peep']
+
+# Test talk
+e-->talk([1])-->[1, 1]
+e-->talk([1,1])-->[2, 1]
+e-->talk([2,1])-->[1, 2, 1, 1]
+e-->talk([1,2,1,1])-->[1, 1, 1, 2, 2, 1]
+e-->talk([1,1,1,2,2,1])-->[3, 1, 2, 2, 1, 1]
+e-->talk([3,1,2,2,1,1])-->[1, 3, 1, 1, 2, 2, 2, 1]
+e-->talk([3,1,1,3,1,2,1,1,1,3,1,2,2,1])-->[1, 3, 2, 1, 1, 3, 1, 1, 1, 2, 3, 1, 1, 3, 1, 1, 2, 2, 1, 1]
+^-->talk([])-->AssertionError
+^-->talk([1,'one',1])-->AssertionError
+
+# Databases for Test: the functions should NOT mutate these dicts
+c-->lexus = {'Rich': {('car', 10, 4), ('suv', 10, 12)},'Steve': {('crossover', 10, 12), ('car', 7, 8)}, 'Nancy': {('truck', 10, 5), ('car', 10, 8)}, 'Lori' : { ('suv', 10, 12), ('truck', 10, 10), ('car', 10, 15) } }
+c-->ace = {'Alex'  : {('hammer', 4, 7), ('saw', 6, 6)}, 'Mark'  : {('hammer', 6, 8), ('wrench', 7, 6)}, 'Bernie': {('pliers', 4, 5), ('screws', 4, 2)}, 'Mike'  : { ('pliers', 2, 3), ('screws', 4, 4), ('wrench', 3, 3) }, 'Katie' : { ('hammer', 1, 1), ('pliers', 2, 6), ('screws', 3, 5) } }
+c-->ace2 =  {'Alex'  : {('hammer', 4, 6), ('saw', 6, 6)}, 'Mark'  : {('hammer', 6, 8), ('wrench', 7, 6)}, 'Bernie': {('pliers', 4, 5), ('screws', 4, 7)}, 'Mike'  : { ('pliers', 2, 5), ('screws', 4, 4), ('wrench', 3, 3) }, 'Katie' : { ('hammer', 1, 1), ('pliers', 2, 6), ('screws', 3, 5) } }
+
+# Test made_quota
+==-->made_quota(lexus)-->{'Lori', 'Steve'}
+==-->made_quota(ace)-->{'Katie', 'Mike', 'Alex'}
+    
+# Test sales1
+e-->sales1(lexus)-->['Lori', 'Steve', 'Rich', 'Nancy']
+e-->sales1(ace)-->['Mark', 'Alex', 'Katie', 'Mike', 'Bernie']
+
+# Test sales2
+e-->sales2(lexus)-->[('Lori', 37), ('Steve', 20), ('Rich', 16), ('Nancy', 13)]
+e-->sales2(ace)-->[('Mark', 14), ('Alex', 13), ('Katie', 12), ('Mike', 10), ('Bernie', 7)]
+e-->sales2(ace2)-->[('Mark', 14), ('Alex', 12), ('Bernie', 12), ('Katie', 12), ('Mike', 12)]
+
+    
+# Test by_category
+==-->by_category(lexus)-->{'crossover': [('Steve', 10, 12)], 'car': [('Lori', 10, 15), ('Nancy', 10, 8), ('Rich', 10, 4), ('Steve', 7, 8)], 'suv': [('Lori', 10, 12), ('Rich', 10, 12)], 'truck': [('Lori', 10, 10), ('Nancy', 10, 5)]}
+==-->by_category(ace)-->{'hammer': [('Alex', 4, 7), ('Katie', 1, 1), ('Mark', 6, 8)], 'wrench': [('Mark', 7, 6), ('Mike', 3, 3)], 'pliers': [('Bernie', 4, 5), ('Katie', 2, 6), ('Mike', 2, 3)], 'saw': [('Alex', 6, 6)], 'screws': [('Bernie', 4, 2), ('Katie', 3, 5), ('Mike', 4, 4)]}
+
+# Test category_leader
+==-->category_leaders(lexus)-->{'suv': [12, {'Rich', 'Lori'}], 'car': [15, {'Lori'}], 'crossover': [12, {'Steve'}], 'truck': [10, {'Lori'}]}
+==-->category_leaders(ace)-->{'hammer': [8, {'Mark'}], 'wrench': [6, {'Mark'}], 'pliers': [6, {'Katie'}], 'saw': [6, {'Alex'}], 'screws': [5, {'Katie'}]}
