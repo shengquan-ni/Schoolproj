@@ -1,0 +1,23 @@
+<<<<<<<<<<<<<<<<<<<<< start of script: main.txt >>>>>>>>>>>>>>>>>>>>>>>>>>>
+make[1]: Entering directory `/home/shengqun/hw/hw0'
+echo --------------removing executable program main--------------
+--------------removing executable program main--------------
+/bin/rm main
+make[1]: Leaving directory `/home/shengqun/hw/hw0'
+make[1]: Entering directory `/home/shengqun/hw/hw0'
+echo --------------compiling main.cpp to create executable program main--------------
+--------------compiling main.cpp to create executable program main--------------
+g++ -ggdb -std=c++11 main.cpp -o main
+make[1]: Leaving directory `/home/shengqun/hw/hw0'
+<<<<<<<<<<<<<<<<<<<<< File main.cpp >>>>>>>>>>>>>>>>>>>>>>>>>>>
+#include<iostream>
+using namespace std;
+int main()
+{
+	int i=40;
+	cout<<"Hello World\n";
+	return 0;
+}
+<<<<<<<<<<<<<<<<<<<<< output of main >>>>>>>>>>>>>>>>>>>>>>>>>>>
+Hello World
+<<<<<<<<<<<<<<<<<<<<< end of script: main.txt >>>>>>>>>>>>>>>>>>>>>>>>>>>
