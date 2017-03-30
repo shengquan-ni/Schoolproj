@@ -1,0 +1,70 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../../courselib/array_queue.hpp
+string
+-
+iostream
+-
+sstream
+-
+initializer_list
+-
+ics_exceptions.hpp
+../../courselib/ics_exceptions.hpp
+
+../../courselib/ics46goody.hpp
+string
+-
+iostream
+-
+sstream
+-
+limits
+-
+vector
+-
+cstdlib
+-
+
+../../courselib/ics_exceptions.hpp
+string
+-
+stdexcept
+-
+
+/cygdrive/d/ICS 46/q6helper/driver_quiz6.cpp
+q6solution.hpp
+/cygdrive/d/ICS 46/q6helper/q6solution.hpp
+
+/cygdrive/d/ICS 46/q6helper/q6solution.hpp
+iostream
+-
+exception
+-
+fstream
+-
+sstream
+-
+algorithm
+-
+ics46goody.hpp
+/cygdrive/d/ICS 46/q6helper/ics46goody.hpp
+array_queue.hpp
+/cygdrive/d/ICS 46/q6helper/array_queue.hpp
+q6utility.hpp
+/cygdrive/d/ICS 46/q6helper/q6utility.hpp
+
+/cygdrive/d/ICS 46/q6helper/q6utility.hpp
+vector
+-
+algorithm
+-
+random
+-
+

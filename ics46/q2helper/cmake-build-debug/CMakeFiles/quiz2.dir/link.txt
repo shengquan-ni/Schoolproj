@@ -1,0 +1,1 @@
+/cygdrive/c/cygwin64/bin/clang++   -std=gnu++0x -g  -Wl,--enable-auto-import CMakeFiles/quiz2.dir/driver_quiz2.cpp.o CMakeFiles/quiz2.dir/test_quiz2.cpp.o  -o quiz2.exe -Wl,--out-implib,libquiz2.dll.a -Wl,--major-image-version,0,--minor-image-version,0  -L"/cygdrive/d/ICS 46/q2helper/../courselib"  -Wl,-Bstatic -lcourselib -lgtest -lgtest_main -Wl,-Bdynamic 

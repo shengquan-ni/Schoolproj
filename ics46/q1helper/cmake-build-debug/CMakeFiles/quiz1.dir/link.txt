@@ -1,0 +1,1 @@
+/cygdrive/c/cygwin64/bin/clang++   -std=c++11 -g  -Wl,--enable-auto-import CMakeFiles/quiz1.dir/driver_quiz1.cpp.o CMakeFiles/quiz1.dir/test_quiz1.cpp.o  -o quiz1.exe -Wl,--out-implib,libquiz1.dll.a -Wl,--major-image-version,0,--minor-image-version,0  -L"/cygdrive/d/ICS 46/q1helper/../courselib"  -Wl,-Bstatic -lcourselib -lgtest -lgtest_main -Wl,-Bdynamic 

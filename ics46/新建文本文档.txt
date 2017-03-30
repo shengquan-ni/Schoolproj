@@ -1,0 +1,1 @@
+-D CMAKE_CXX_COMPILER=/cygdrive/c/cygwin64/bin/clang++ -D CMAKE_C_COMPILER=/cygdrive/c/cygwin64/bin/clang

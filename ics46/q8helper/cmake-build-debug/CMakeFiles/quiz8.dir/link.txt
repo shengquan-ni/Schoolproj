@@ -1,0 +1,1 @@
+/cygdrive/c/cygwin64/bin/clang++   -std=c++11 -g  -Wl,--enable-auto-import CMakeFiles/quiz8.dir/driver_equivalence.cpp.o CMakeFiles/quiz8.dir/empirical_equivalence.cpp.o  -o quiz8.exe -Wl,--out-implib,libquiz8.dll.a -Wl,--major-image-version,0,--minor-image-version,0  -L"/cygdrive/d/ICS 46/q8helper/../courselib"  -Wl,-Bstatic -lcourselib -Wl,-Bdynamic 

@@ -1,0 +1,82 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../../courselib/array_map.hpp
+string
+-
+iostream
+-
+sstream
+-
+initializer_list
+-
+ics_exceptions.hpp
+../../courselib/ics_exceptions.hpp
+pair.hpp
+../../courselib/pair.hpp
+
+../../courselib/array_set.hpp
+string
+-
+iostream
+-
+sstream
+-
+initializer_list
+-
+ics_exceptions.hpp
+../../courselib/ics_exceptions.hpp
+
+../../courselib/ics46goody.hpp
+string
+-
+iostream
+-
+sstream
+-
+limits
+-
+vector
+-
+cstdlib
+-
+
+../../courselib/ics_exceptions.hpp
+string
+-
+stdexcept
+-
+
+../../courselib/pair.hpp
+iostream
+-
+
+/cygdrive/d/ICS 46/q5helper/driver_quiz5.cpp
+q5solution.hpp
+/cygdrive/d/ICS 46/q5helper/q5solution.hpp
+ics46goody.hpp
+/cygdrive/d/ICS 46/q5helper/ics46goody.hpp
+
+/cygdrive/d/ICS 46/q5helper/q5solution.hpp
+iostream
+-
+exception
+-
+fstream
+-
+sstream
+-
+vector
+-
+ics46goody.hpp
+/cygdrive/d/ICS 46/q5helper/ics46goody.hpp
+array_set.hpp
+/cygdrive/d/ICS 46/q5helper/array_set.hpp
+array_map.hpp
+/cygdrive/d/ICS 46/q5helper/array_map.hpp
+

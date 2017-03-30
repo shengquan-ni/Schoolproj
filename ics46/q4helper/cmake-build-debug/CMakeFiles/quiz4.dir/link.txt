@@ -1,0 +1,1 @@
+/usr/bin/c++.exe   -std=c++11 -g  -Wl,--enable-auto-import CMakeFiles/quiz4.dir/driver_quiz4.cpp.o  -o quiz4.exe -Wl,--out-implib,libquiz4.dll.a -Wl,--major-image-version,0,--minor-image-version,0  -L"/cygdrive/d/ICS 46/q4helper/../courselib"  -Wl,-Bstatic -lcourselib -Wl,-Bdynamic 

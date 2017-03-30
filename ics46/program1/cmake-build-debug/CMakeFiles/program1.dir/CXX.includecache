@@ -1,0 +1,112 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../../courselib/array_map.hpp
+string
+-
+iostream
+-
+sstream
+-
+initializer_list
+-
+ics_exceptions.hpp
+../../courselib/ics_exceptions.hpp
+pair.hpp
+../../courselib/pair.hpp
+
+../../courselib/array_priority_queue.hpp
+string
+-
+iostream
+-
+sstream
+-
+initializer_list
+-
+ics_exceptions.hpp
+../../courselib/ics_exceptions.hpp
+
+../../courselib/array_queue.hpp
+string
+-
+iostream
+-
+sstream
+-
+initializer_list
+-
+ics_exceptions.hpp
+../../courselib/ics_exceptions.hpp
+
+../../courselib/array_set.hpp
+string
+-
+iostream
+-
+sstream
+-
+initializer_list
+-
+ics_exceptions.hpp
+../../courselib/ics_exceptions.hpp
+
+../../courselib/ics46goody.hpp
+string
+-
+iostream
+-
+sstream
+-
+limits
+-
+vector
+-
+cstdlib
+-
+
+../../courselib/ics_exceptions.hpp
+string
+-
+stdexcept
+-
+
+../../courselib/pair.hpp
+iostream
+-
+
+/cygdrive/d/ICS 46/program1/fa.cpp
+
+/cygdrive/d/ICS 46/program1/ndfa.cpp
+string
+-
+iostream
+-
+fstream
+-
+sstream
+-
+vector
+-
+ics46goody.hpp
+/cygdrive/d/ICS 46/program1/ics46goody.hpp
+array_queue.hpp
+/cygdrive/d/ICS 46/program1/array_queue.hpp
+array_priority_queue.hpp
+/cygdrive/d/ICS 46/program1/array_priority_queue.hpp
+array_set.hpp
+/cygdrive/d/ICS 46/program1/array_set.hpp
+array_map.hpp
+/cygdrive/d/ICS 46/program1/array_map.hpp
+
+/cygdrive/d/ICS 46/program1/reachable.cpp
+
+/cygdrive/d/ICS 46/program1/runoffvoting.cpp
+
+/cygdrive/d/ICS 46/program1/wordgenerator.cpp
+

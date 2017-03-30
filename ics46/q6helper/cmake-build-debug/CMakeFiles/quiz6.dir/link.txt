@@ -1,0 +1,1 @@
+/cygdrive/c/cygwin64/bin/clang++   -std=c++11 -g  -Wl,--enable-auto-import CMakeFiles/quiz6.dir/driver_quiz6.cpp.o  -o quiz6.exe -Wl,--out-implib,libquiz6.dll.a -Wl,--major-image-version,0,--minor-image-version,0  -L"/cygdrive/d/ICS 46/q6helper/../courselib"  -Wl,-Bstatic -lcourselib -Wl,-Bdynamic 

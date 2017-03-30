@@ -1,0 +1,1 @@
+/cygdrive/c/cygwin64/bin/clang++   -std=c++11 -g  -Wl,--enable-auto-import CMakeFiles/quiz5.dir/driver_quiz5.cpp.o  -o quiz5.exe -Wl,--out-implib,libquiz5.dll.a -Wl,--major-image-version,0,--minor-image-version,0  -L"/cygdrive/d/ICS 46/q5helper/../courselib"  -Wl,-Bstatic -lcourselib -Wl,-Bdynamic 

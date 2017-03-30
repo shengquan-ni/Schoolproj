@@ -1,0 +1,84 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../../courselib/ics46goody.hpp
+string
+-
+iostream
+-
+sstream
+-
+limits
+-
+vector
+-
+cstdlib
+-
+
+../../courselib/ics_exceptions.hpp
+string
+-
+stdexcept
+-
+
+../../courselib/pair.hpp
+iostream
+-
+
+/cygdrive/d/ICS 46/q7helper/driver_equivalence.cpp
+string
+-
+iostream
+-
+fstream
+-
+ics46goody.hpp
+/cygdrive/d/ICS 46/q7helper/ics46goody.hpp
+ics_exceptions.hpp
+/cygdrive/d/ICS 46/q7helper/ics_exceptions.hpp
+hash_equivalence.hpp
+/cygdrive/d/ICS 46/q7helper/hash_equivalence.hpp
+
+/cygdrive/d/ICS 46/q7helper/empirical_equivalence.cpp
+
+/cygdrive/d/ICS 46/q7helper/hash_equivalence.hpp
+sstream
+-
+ics_exceptions.hpp
+/cygdrive/d/ICS 46/q7helper/ics_exceptions.hpp
+hash_map.hpp
+/cygdrive/d/ICS 46/q7helper/hash_map.hpp
+hash_set.hpp
+/cygdrive/d/ICS 46/q7helper/hash_set.hpp
+
+/cygdrive/d/ICS 46/q7helper/hash_map.hpp
+string
+-
+iostream
+-
+initializer_list
+-
+ics_exceptions.hpp
+/cygdrive/d/ICS 46/q7helper/ics_exceptions.hpp
+pair.hpp
+/cygdrive/d/ICS 46/q7helper/pair.hpp
+
+/cygdrive/d/ICS 46/q7helper/hash_set.hpp
+string
+-
+iostream
+-
+sstream
+-
+initializer_list
+-
+ics_exceptions.hpp
+/cygdrive/d/ICS 46/q7helper/ics_exceptions.hpp
+pair.hpp
+/cygdrive/d/ICS 46/q7helper/pair.hpp
+

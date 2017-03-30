@@ -1,0 +1,1 @@
+/cygdrive/c/cygwin64/bin/clang++   -std=c++11 -g  -Wl,--enable-auto-import CMakeFiles/quiz7.dir/driver_equivalence.cpp.o CMakeFiles/quiz7.dir/empirical_equivalence.cpp.o  -o quiz7.exe -Wl,--out-implib,libquiz7.dll.a -Wl,--major-image-version,0,--minor-image-version,0  -L"/cygdrive/d/ICS 46/q7helper/../courselib"  -Wl,-Bstatic -lcourselib -Wl,-Bdynamic 

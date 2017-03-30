@@ -1,0 +1,1 @@
+/cygdrive/c/cygwin64/bin/clang++   -std=c++11 -g  -Wl,--enable-auto-import CMakeFiles/program0.dir/driver.cpp.o CMakeFiles/program0.dir/test_queue.cpp.o  -o program0.exe -Wl,--out-implib,libprogram0.dll.a -Wl,--major-image-version,0,--minor-image-version,0  -L"/cygdrive/d/ICS 46/program0/../courselib"  -Wl,-Bstatic -lcourselib -lgtest -lgtest_main -Wl,-Bdynamic 
